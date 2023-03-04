@@ -25,7 +25,7 @@ class ProductManager {
         }
     }
 
-    async getProductById() {
+    async getProductById(id) {
         const productFound = this.products.find(product => product.id === id);
         if (productFound) {
             return productFound
@@ -39,6 +39,15 @@ const init = async () => {
     const productManager = new ProductManager();
     
     
+    await productManager.addProduct({
+        title: 'Mouse',
+        description: 'Descripción',
+        price: 5000,
+        code: 'CL250',
+        thumbnail: 'image.png',
+        stock: 20
+    })
+
     await productManager.addProduct({
         title: 'Mouse',
         description: 'Descripción',
@@ -61,7 +70,7 @@ const init = async () => {
         
     const foundProduct = await productManager.getProductById(1);
     console.log({ foundProduct });
-    const foundProductError = await productManager.getProductById(2);
+    const foundProductError = await productManager.getProductById(1);
     console.log({ foundProductError });
 }
 

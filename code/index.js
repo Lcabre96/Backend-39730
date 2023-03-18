@@ -7,6 +7,7 @@ class ProductManager {
     getProducts() {
         return this.products;
     }
+    
 
     addProduct({ title, description, price, thumbnail, code, stock }) {
         const productExist = this.products.find(prod => prod.code === code)
@@ -37,30 +38,30 @@ class ProductManager {
 }
 
 const productManager = new ProductManager()
-// verification One
-console.log(productManager.getProducts())
-// verification Two
-productManager.addProduct({
-    title: 'Producto Prueba 1',
-    description: 'producto 1',
-    price: 200,
-    thumbnail: 'imagen1.jpg',
-    code: 'ABC123',
-    stock: 20
-})
-console.log(productManager.getProducts())
-// Verification Three
-productManager.addProduct({
-    title: 'Producto Prueba 1',
-    description: 'producto 1',
-    price: 200,
-    thumbnail: 'imagen1.jpg',
-    code: 'ABC123',
-    stock: 20
-})
-// Verification Four
-console.log(productManager.getProductById(5))
 
+console.log(productManager.getProducts())
+
+productManager.addProduct({
+    title: 'Producto Prueba 1',
+    description: 'producto 1',
+    price: 200,
+    thumbnail: 'imagen1.jpg',
+    code: 'ABC123',
+    stock: 20
+})
+console.log(productManager.getProducts())
+
+productManager.addProduct({
+    title: 'Producto Prueba 2',
+    description: 'producto 2',
+    price: 200,
+    thumbnail: 'imagen2.jpg',
+    code: 'ABC123',
+    stock: 15
+})
+
+
+console.log(productManager.getProductById(1))
 
 
 

@@ -4,12 +4,12 @@ const productManager = new ProductManager('./db/productsDb.json')
 
 
 // test uno
-// console.log(productManager.getProducts())
+console.log(productManager.getProducts())
 
 // test dos
 // ;(async ()=> {
 //     productManager.getAddProducts(
-//         {title: 'Producto Pruena 1',
+//         {title: 'Producto Prueba 1',
 //         description: 'Descripción del producto 1',
 //         price: 200,
 //         thumbnail: 'imagen1.jpg',
